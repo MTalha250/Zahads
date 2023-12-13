@@ -1,37 +1,60 @@
-"use client";
-import React from "react";
-import { TypeAnimation } from "react-type-animation";
-// import img from "@/assets/animation1.gif";
+import Form from "@/components/Form";
+
+const slides = [
+  {
+    title: "Looking for a Business Consulting firm in Dubai?",
+    subtitle: "Greenbooks calculates your business success",
+    description:
+      "We are a team of experienced business consultants in Dubai, UAE. We provide business setup services, accounting services, VAT services, and other business consulting services in Dubai, UAE.",
+    image:
+      "https://www.centennialmigration.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Faus_im_cover.8bd27385.jpg&w=3840&q=75",
+  },
+  {
+    title: "Looking for a Business Consulting firm in Dubai?",
+    subtitle: "Greenbooks calculates your business success",
+    description:
+      "We are a team of experienced business consultants in Dubai, UAE. We provide business setup services, accounting services, VAT services, and other business consulting services in Dubai, UAE.",
+    image:
+      "https://blog.udemy.com/wp-content/uploads/2014/04/bigstock-Image-of-business-partners-dis-41296537.jpg",
+  },
+];
 
 const Hero = () => {
   return (
-    <div className="w-full flex items-center justify-center min-h-[70vh] bg-[#fdfbfd] px-16">
-      <div className="w-2/5 h-[50vh] bg-white flex items-center justify-center">
-        {/* <img src={img.src} alt="" /> */}
-      </div>
-      <div className="w-3/5 px-20">
-        <p className="text-lg font-semibold text-red-600">
-          Comprehensive Car Insurance.
-        </p>
-        <h1 className="font-bold text-4xl text-black tracking-wider my-5">
-          <span>Car Insurance for</span>
-          <br />
-          <span className="text-red-700">
-            <TypeAnimation
-              sequence={["UAE vehicles", 3000, "Non UAE vehicles", 3000]}
-              speed={40}
-              wrapper="span"
-              repeat={Infinity}
-            />
-          </span>
-        </h1>
-        <p className="text-md text-black my-5">
-          Whether you're driving at home or abroad, get the coverage you need.
-          Compare and choose from the best car insurance options available.
-        </p>
-        <button className="mt-10 px-10 py-3 bg-red-700 text-white rounded-lg shadow-lg hover:bg-red-800">
-          Get Your Quote Now
-        </button>
+    <div className="flex items-end h-screen bg-secondary w-full justify-center relative">
+      <div className="flex md:h-[93vh] h-screen w-full md:w-[95vw] mb-6 md:rounded-[40px] bg-green-500 overflow-hidden relative">
+        <div
+          className="md:w-[95vw] w-full relative md:h-[93vh] h-screen bg-green-500"
+          style={{
+            backgroundImage: `url(${slides[0].image})`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <div className="absolute inset-0 bg-black opacity-20"></div>
+          {/* <div className="flex z-20 items-center justify-between w-full md:px-24 px-10 absolute">
+            <div>
+              <div className="flex flex-col justify-center h-screen md:h-[90vh] md:w-[50vw]">
+                <h2 className="text-white mb-4 md:border-b-2 w-fit md:border-green-500">
+                  Get Tax and Accounting Services in Dubai
+                </h2>
+                <h1 className="text-white md:text-4xl md:leading-[50px] font-bold font-mont mb-3">
+                  {slides[0].title}
+                </h1>
+                <h3 className="text-green-400 md:text-2xl">
+                  {slides[0].subtitle}!
+                </h3>
+                <p className="text-white mt-3 text-justify">
+                  {slides[0].description}
+                </p>
+              </div>
+            </div>
+            <div className="mt-16 md:block hidden">
+              <Form />
+            </div>
+          </div> */}
+        </div>
       </div>
     </div>
   );

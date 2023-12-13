@@ -34,9 +34,9 @@ const Faqs = () => {
   ];
 
   return (
-    <div className="flex flex-col md:flex-row w-full bg-gray-100 lg:py-10 px-16">
+    <div className="flex flex-col md:flex-row w-full lg:py-10 px-16">
       <div className="w-1/2 pr-5 md:pr-10">
-        <h1 className="font-semibold mb-3 lg:mb-5 text-3xl lg:text-5xl 2xl:text-6xl">
+        <h1 className="font-semibold font-bask text-primary mb-3 lg:mb-5 text-3xl lg:text-5xl 2xl:text-6xl">
           FAQs
         </h1>
         <p className="font-extralight text-justify lg:text-lg 2xl:text-2xl">
@@ -49,10 +49,10 @@ const Faqs = () => {
         <Accordion type="single" collapsible className="w-full">
           {faq.map((a, i) => (
             <AccordionItem key={a.trigger} value={`item-${i}`} className="my-2">
-              <AccordionTrigger className="px-2 justify-start bg-gray-200 hover:bg-primary hover:text-white transition duration-300">
+              <AccordionTrigger className="px-6 rounded-lg justify-start bg-gray-200 hover:bg-primary hover:text-white transition duration-300">
                 {a.trigger}
               </AccordionTrigger>
-              <AccordionContent className="border p-2 bg-white font-extralight text-md 2xl:text-xl">
+              <AccordionContent className="p-2 bg-white font-extralight text-md 2xl:text-xl">
                 {a.text}
               </AccordionContent>
             </AccordionItem>

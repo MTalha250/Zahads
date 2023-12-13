@@ -12,9 +12,10 @@ const MarqueeComp = () => {
         <div className="w-1/5 h-1 bg-primary my-1"></div>
         <div className="w-[19%] h-1 bg-secondary"></div>
       </div>
+      <br />
       <Marquee className="uppercase text-xl font-light my-5">
         {marqueeImgs.map((img) => (
-          <img src={img} className="w-32 mx-5" />
+          <img key={img} src={img} className="w-32 mx-5" />
         ))}
       </Marquee>
     </div>

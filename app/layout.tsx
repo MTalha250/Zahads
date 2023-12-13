@@ -19,10 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="w-full fixed top-0 z-50">
+        <div className="w-full flex items-center justify-center fixed top-10 z-50">
           <Navbar />
         </div>
-        <div className="pt-20">{children}</div>
+        <div className="">{children}</div>
         <Footer />
       </body>
     </html>
