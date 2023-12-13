@@ -1,14 +1,16 @@
 "use client";
 import React, { useEffect } from "react";
 import { navLinks } from "@/constants";
-import { NavigationMenu } from "@/components/ui/navigation-menu";
+import { BiSolidChevronDown } from "react-icons/bi";
 import logo from "@/assets/logo2.png";
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "../ui/button";
-
+import { usePathname } from "next/navigation";
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(-1);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,27 +26,51 @@ const Navbar = () => {
 
   return (
     <div
-      className={`px-16 py-3 w-[90vw] relative flex justify-between rounded-full ${
-        scrolled ? "bg-white shadow" : ""
-      } items-center`}
+      className={
+        pathname != "/" || scrolled
+          ? "bg-white text-black shadow-xl px-16 py-3 w-[95%] relative flex items-center justify-between rounded-full"
+          : "text-white px-16 py-3 w-[95%] relative flex justify-between rounded-full items-center"
+      }
     >
-      <img src={logo.src} alt="logo" className="w-32" />
-      <NavigationMenu className="flex gap-5 py-2">
-        {navLinks.map((navLink, index) => (
-          <Link href={navLink.href} key={index}>
-            <p
-              className={`cursor-pointer hover:text-primary transition-all ${
-                scrolled ? "" : " font-medium text-white"
-              }`}
-            >
-              {navLink.label}
-            </p>
-          </Link>
+      <Link href="/">
+        <img src={logo.src} alt="logo" className="w-32" />
+      </Link>
+      <div className="items-center justify-center gap-5 md:flex hidden">
+        {navLinks.map((link, index) => (
+          <div
+            key={index}
+            onMouseEnter={() => setActiveDropdown(index)}
+            onMouseLeave={() => setActiveDropdown(-1)}
+            className="relative"
+          >
+            <Link href={link.href} className="flex items-center">
+              {link.label}
+              {link.children && (
+                <BiSolidChevronDown className="inline-block ml-1" />
+              )}
+            </Link>
+            {link.children && activeDropdown === index && (
+              <div className="text-black absolute top-full left-[-10px] bg-white p-2 border w-[250px] rounded shadow-lg">
+                {link.children.map((child, childIndex) => (
+                  <Link
+                    key={childIndex}
+                    href={child.href}
+                    className="block p-2 text-sm hover:bg-gray-200"
+                  >
+                    {child.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
         ))}
-      </NavigationMenu>
-      <Button className="text-white border-primary bg-primary hover:bg-s transition-all">
-        Get a Quote
-      </Button>
+      </div>
+      <Link
+        href="/contact"
+        className="py-2 px-5 rounded-full text-white border-primary bg-primary hover:bg-s transition-all"
+      >
+        Contact Us
+      </Link>
     </div>
   );
 };
