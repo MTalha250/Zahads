@@ -3,14 +3,7 @@ import Form from "@/components/Form";
 const slides = [
   {
     title: "Looking for a Business Consulting firm in Dubai?",
-    subtitle: "Greenbooks calculates your business success",
-    description:
-      "We are a team of experienced business consultants in Dubai, UAE. We provide business setup services, accounting services, VAT services, and other business consulting services in Dubai, UAE.",
-    image:"https://blog.udemy.com/wp-content/uploads/2014/04/bigstock-Image-of-business-partners-dis-41296537.jpg"
-    },
-  {
-    title: "Looking for a Business Consulting firm in Dubai?",
-    subtitle: "Greenbooks calculates your business success",
+    subtitle: <span>Zahads calculates your business success</span>,
     description:
       "We are a team of experienced business consultants in Dubai, UAE. We provide business setup services, accounting services, VAT services, and other business consulting services in Dubai, UAE.",
     image:
@@ -32,16 +25,16 @@ const Hero = () => {
           }}
         >
           <div className="absolute inset-0 bg-black opacity-20"></div>
-          {/* <div className="flex z-20 items-center justify-between w-full md:px-24 px-10 absolute">
-            <div>
-              <div className="flex flex-col justify-center h-screen md:h-[90vh] md:w-[50vw]">
-                <h2 className="text-white mb-4 md:border-b-2 w-fit md:border-green-500">
-                  Get Tax and Accounting Services in Dubai
+          <div className="flex z-20 items-center justify-between w-full absolute">
+            <div className="glass h-[93vh] max-w-[50vw] px-16">
+              <div className="flex flex-col justify-center h-screen md:h-[90vh]">
+                <h2 className="text-white mb-4 md:border-b-2 w-fit md:border-primary">
+                  Get Business Consulting Services in Dubai
                 </h2>
-                <h1 className="text-white md:text-4xl md:leading-[50px] font-bold font-mont mb-3">
+                <h1 className="text-white font-bask md:text-4xl md:leading-[50px] font-bold font-mont mb-3">
                   {slides[0].title}
                 </h1>
-                <h3 className="text-green-400 md:text-2xl">
+                <h3 className="text-primary md:text-2xl font-medium">
                   {slides[0].subtitle}!
                 </h3>
                 <p className="text-white mt-3 text-justify">
@@ -49,10 +42,10 @@ const Hero = () => {
                 </p>
               </div>
             </div>
-            <div className="mt-16 md:block hidden">
+            <div className="mt-16 md:block hidden mr-16">
               <Form />
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>
