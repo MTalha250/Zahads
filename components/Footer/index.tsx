@@ -91,8 +91,14 @@ const Footer = () => {
               </span>
             </h3>
             <ul className="mt-4 text-sm space-y-2 flex flex-col">
-              <Link href={"/services/business-setup-services/company-formation"}>Business Setup Services</Link>
-              <Link href="/services/management-consultancy/financial-advisory">Management Consultancy</Link>
+              <Link
+                href={"/services/business-setup-services/company-formation"}
+              >
+                Business Setup Services
+              </Link>
+              <Link href="/services/management-consultancy/financial-advisory">
+                Management Consultancy
+              </Link>
               <Link href={"/services/audit/internal-audit"}>Audit</Link>
               <Link href={"/services/accounting/bookkeeping"}>Accounting</Link>
             </ul>
@@ -121,7 +127,7 @@ const Footer = () => {
 
         <div className="md:col-span-3 mt-12 border-t border-gray-300 pt-8">
           <p className="text-center text-sm">
-            &copy; Copyright 2023 Bestaxca, All Rights are Reserved.
+            &copy; Copyright 2023 Zahads, All Rights are Reserved.
           </p>
         </div>
       </div>
