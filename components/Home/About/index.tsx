@@ -23,7 +23,7 @@ const About = () => {
           <br />
           <br />
           Experience the <strong className="text-primary italic">
-            Zahids
+            Zahads
           </strong>{" "}
           advantage and let us calculate the best opportunities for you.
         </p>

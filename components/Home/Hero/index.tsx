@@ -6,9 +6,8 @@ const slides = [
     subtitle: "Greenbooks calculates your business success",
     description:
       "We are a team of experienced business consultants in Dubai, UAE. We provide business setup services, accounting services, VAT services, and other business consulting services in Dubai, UAE.",
-    image:
-      "https://www.centennialmigration.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Faus_im_cover.8bd27385.jpg&w=3840&q=75",
-  },
+    image:"https://blog.udemy.com/wp-content/uploads/2014/04/bigstock-Image-of-business-partners-dis-41296537.jpg"
+    },
   {
     title: "Looking for a Business Consulting firm in Dubai?",
     subtitle: "Greenbooks calculates your business success",

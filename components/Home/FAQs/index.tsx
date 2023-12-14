@@ -8,30 +8,35 @@ import img from "@/assets/faq.png";
 const Faqs = () => {
   const faq = [
     {
-      trigger: "How can I track my order?",
-      text: "Once your order has been shipped, you will receive an email with the tracking information and a link to track your order.",
+      trigger: "What services does Zahads offer?",
+      text: "Zahads offers a range of services including business consultancy, accounting, financial planning, and tax advisory tailored to the unique needs of the UAE market."
     },
     {
-      trigger: "What payment methods do you accept?",
-      text: "We accept Visa, Mastercard, American Express, PayPal, and various other payment methods. You can see the full list of accepted payment methods during the checkout process.",
+      trigger: "How can Zahads help my business grow?",
+      text: "Our expert team provides strategic insights, financial planning, and market analysis to help your business identify growth opportunities and optimize operations in the UAE's dynamic market."
     },
     {
-      trigger: "Can I return or exchange an item?",
-      text: "Yes, we have a hassle-free return and exchange policy. Please visit our Returns & Exchanges page for more information on how to initiate a return or exchange.",
+      trigger: "What makes Zahads different from other consultancy firms?",
+      text: "Zahads stands out for its deep understanding of the UAE's business environment, personalized client approach, and a team of seasoned professionals committed to your business's success."
     },
     {
-      trigger: "How long will it take to receive my order?",
-      text: "Delivery times vary depending on your location and the shipping method chosen. Generally, orders are processed within 1-2 business days. Once shipped, the estimated delivery time will be provided in the shipping confirmation email.",
+      trigger: "Can Zahads assist with international business expansion?",
+      text: "Yes, we specialize in assisting businesses with international expansion, offering guidance on cross-border financial strategies, compliance, and market entry."
     },
     {
-      trigger: "Do you offer international shipping?",
-      text: "Yes, we offer international shipping to many countries. During checkout, you can enter your address to see if we deliver to your location and view the shipping costs.",
+      trigger: "Can Zahads handle complex tax filing?",
+      text: "Yes, our tax specialists are well-versed in UAE tax laws, ensuring accurate and optimized tax filing for businesses of all sizes."
     },
     {
-      trigger: "How can I change or cancel my order?",
-      text: "Please contact our customer service as soon as possible if you need to change or cancel your order. Orders that have already been shipped cannot be changed or canceled but can be returned following our return policy.",
+      trigger: "What accounting services does Zahads provide?",
+      text: "We offer comprehensive accounting services including bookkeeping, financial reporting, and budgeting to support your business's financial health."
     },
+    {
+      trigger: "Does Zahads offer audit services?",
+      text: "Our audit services provide thorough financial analysis to improve your business's operational efficiency and ensure regulatory compliance."
+    }
   ];
+  
 
   return (
     <div className="flex flex-col md:flex-row w-full lg:py-10 px-16">
