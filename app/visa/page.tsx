@@ -1,6 +1,7 @@
 import Banner from "@/components/Visa/Banner";
 import Benefits from "@/components/Visa/Benefits";
 import Eligibility from "@/components/Visa/Eligibility";
+import Process from "@/components/Visa/Process";
 import React from "react";
 
 const Visa = () => {
@@ -11,6 +12,7 @@ const Visa = () => {
         <Benefits />
         <Eligibility />
       </div>
+      <Process />
     </div>
   );
 };

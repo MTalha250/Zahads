@@ -21,8 +21,8 @@ const Benefits = () => {
 
   return (
     <div className="my-20">
-      <h2 className="text-3xl font-bold font-mont text-center">
-        UAE Golden Visa Benefits
+      <h2 className="text-3xl font-bold font-mont text-center text-secondary">
+        UAE <span className="text-primary"> Golden Visa</span> Benefits
       </h2>
       <div className="flex flex-col items-center">
         <div className="w-2/5 h-1 bg-primary my-1"></div>
@@ -34,8 +34,10 @@ const Benefits = () => {
             key={benefit}
             className="border hover:border-none bg-primary text-white transition duration-200 hover:shadow-lg p-5 rounded-2xl text-center"
           >
-            <div className="mb-2 flex justify-center text-5xl">
-              <FaCheckCircle />
+            <div className="text-secondary mb-2 flex justify-center text-5xl">
+              <span className="bg-white rounded-full">
+                <FaCheckCircle />
+              </span>
             </div>
             <p>{benefit}</p>
           </div>
