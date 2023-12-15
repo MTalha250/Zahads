@@ -28,14 +28,14 @@ const Navbar = () => {
     <div
       className={
         pathname != "/" || scrolled
-          ? "bg-white text-black shadow-xl px-16 py-3 w-[95%] relative flex items-center justify-between rounded-full"
-          : "text-white px-16 py-3 w-[95%] relative flex justify-between rounded-full items-center"
+          ? "bg-white text-black shadow-xl px-8 md:px-16 py-3 w-[95%] relative flex items-center justify-between rounded-full"
+          : "text-white px-8 md:px-16 py-3 w-[95%] relative flex justify-between rounded-full items-center"
       }
     >
       <Link href="/">
-        <img src={logo.src} alt="logo" className="w-32" />
+        <img src={logo.src} alt="logo" className="w-28 md:w-32" />
       </Link>
-      <div className="items-center justify-center gap-5 md:flex hidden">
+      <div className="text-sm items-center justify-center gap-5 md:flex hidden">
         {navLinks.map((link, index) => (
           <div
             key={index}

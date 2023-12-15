@@ -26,7 +26,7 @@ const Hero = () => {
         >
           <div className="absolute inset-0 bg-black opacity-20"></div>
           <div className="flex z-20 items-center justify-between w-full absolute">
-            <div className="glass h-[93vh] max-w-[50vw] px-16">
+            <div className="glass md:h-[93vh] md:max-w-[50vw] px-16">
               <div className="flex flex-col justify-center h-screen md:h-[90vh]">
                 <h2 className="text-white mb-4 md:border-b-2 w-fit md:border-primary">
                   Get Business Consulting Services in Dubai

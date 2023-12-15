@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,13 +21,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className="w-[100vw] overflow-hidden">
-        <div className="w-[100vw] flex items-center justify-center fixed top-10 z-50">
-          <Navbar />
+          <div className="w-[100vw] flex items-center justify-center fixed top-10 z-50">
+            <Navbar />
+          </div>
+          <div>{children}</div>
+          <Footer />
         </div>
-        <div>{children}</div>
-        <Footer />
-        </div>
-        
+        <Toaster />
       </body>
     </html>
   );
