@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Progress } from "@/components/ui/progress";
 import toast from "react-hot-toast";
 import { Input } from "@/components/ui/input";
+import axios from "axios";
 
 const Eligibility = () => {
   const [step, setStep] = useState(1);
@@ -11,19 +12,27 @@ const Eligibility = () => {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [email, setEmail] = useState("");
-  const [num, setNum] = useState("");
-
-  const handleSubmit = () => {
-    toast.success(
-      "Thank you for sending inquiry, we will revert back shortly."
-    );
+  const [phone, setPhone] = useState("");
+  const [loading, setLoading] = useState(false);
+  const handleSubmit = async () => {
+    setLoading(true);
+    const response = await axios.post(`/api/eligibility`, {
+      fname,
+      lname,
+      email,
+      phone,
+      uae,
+      requirement,
+    });
+    toast.success(response.data.message);
     setStep(1);
     setRequirement("");
     setUae("");
     setFname("");
     setLname("");
     setEmail("");
-    setNum("");
+    setPhone("");
+    setLoading(false);
   };
 
   return (
@@ -179,7 +188,10 @@ const Eligibility = () => {
               </label>
               <div className="flex space-x-2">
                 <button
-                  onClick={() => setStep(1)}
+                  onClick={() => {
+                    setStep(1);
+                    setRequirement("");
+                  }}
                   className="my-3 bg-primary py-3 px-5 text-white rounded"
                 >
                   Previous
@@ -204,7 +216,7 @@ const Eligibility = () => {
               className="flex flex-col space-y-2 text-sm"
               onSubmit={(e) => {
                 e.preventDefault();
-                fname && lname && email && num
+                fname && lname && email && phone
                   ? setStep(4)
                   : toast.error("Please fill all the fields");
               }}
@@ -233,14 +245,17 @@ const Eligibility = () => {
                 <Input
                   placeholder="Phone"
                   type="number"
-                  value={num}
-                  onChange={(e) => setNum(e.target.value)}
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
                 />
               </div>
 
               <div className="flex space-x-2">
                 <button
-                  onClick={() => setStep(2)}
+                  onClick={() => {
+                    setStep(2);
+                    setUae("");
+                  }}
                   className="my-3 bg-primary py-3 px-5 text-white rounded"
                 >
                   Previous
@@ -274,21 +289,23 @@ const Eligibility = () => {
               <h2 className="my-2 font-semibold">what's your email address?</h2>
               <p>{email}</p>
               <h2 className="my-2 font-semibold">Phone</h2>
-              <p>{num}</p>
+              <p>{phone}</p>
             </div>
             <div className="flex space-x-2">
               <button
+                disabled={loading}
                 onClick={() => setStep(3)}
                 className="my-3 bg-primary py-3 px-5 text-white rounded"
               >
                 Previous
               </button>
               <button
+                disabled={loading}
                 type="submit"
                 className="my-3 bg-primary py-3 px-5 text-white rounded"
                 onClick={handleSubmit}
               >
-                Submit
+                {loading ? "Submitting" : "Submit"}
               </button>
             </div>
           </div>

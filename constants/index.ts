@@ -111,6 +111,10 @@ export const navLinks = [
       },
     ],
   },
+  {
+    href:"/visa",
+    label:"Golden Visa",
+  },
 ];
 
 export const marqueeImgs = [

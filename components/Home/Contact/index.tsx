@@ -5,17 +5,16 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import axios from "axios";
-import { useToast } from "@/components/ui/use-toast";
+import { toast } from "react-hot-toast";
 
 const Contact = () => {
-  const { toast } = useToast();
   const [data, setData] = useState({
     fname: "",
     lname: "",
     email: "",
     message: "",
   });
-
+  const [loading, setLoading] = useState(false);
   const handleChange = (e: any) => {
     const { name, value } = e.target;
     setData((prev) => {
@@ -27,19 +26,21 @@ const Contact = () => {
   };
 
   const handleSubmit = async (e: any) => {
+    setLoading(true);
     e.preventDefault();
     if (!data.fname || !data.lname || !data.email || !data.message) {
-      toast({ title: "Please fill all fields" });
+      toast.error("Please fill all fields");
       return;
     }
-    // const response = await axios.post(`/api/contact`, data);
-    // toast({ title: response.data.message });
-    // setData({
-    //   fname: "",
-    //   lname: "",
-    //   email: "",
-    //   message: "",
-    // });
+    const response = await axios.post(`/api/contact`, data);
+    toast.success(response.data.message);
+    setData({
+      fname: "",
+      lname: "",
+      email: "",
+      message: "",
+    });
+    setLoading(false);
   };
 
   return (
@@ -80,10 +81,11 @@ const Contact = () => {
           onChange={handleChange}
         />
         <Button
+          disabled={loading}
           type="submit"
           className="mt-3 bg-primary hover:bg-yellow-700 transition duration-300 px-8 rounded-full"
         >
-          Send
+          {loading ? "Sending" : "Send"}
         </Button>
       </form>
       <iframe

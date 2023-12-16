@@ -2,9 +2,9 @@ import React from "react";
 
 const Process = () => {
   return (
-    <div className="my-10 p-8 md:px-16 flex bg-secondary text-white items-center">
-      <div className="w-1/2 px-10">
-        <h1 className="font-bold text-3xl">
+    <div className="my-10 p-8 md:px-16 flex flex-col md:flex-row bg-secondary text-white items-center">
+      <div className="w-full md:w-1/2 md:px-10">
+        <h1 className="font-bold text-2xl md:text-3xl">
           How To Apply For UAE Golden Visa With{" "}
           <span className="font-bask text-primary italic">
             {" "}
@@ -12,7 +12,7 @@ const Process = () => {
           </span>
         </h1>
       </div>
-      <div className="w-1/2">
+      <div className="w-full md:w-1/2 text-justify">
         <div className="my-5">
           <h2 className="font-bold text-xl text-primary font-bask">
             Eligibility Assessment

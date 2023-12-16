@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
+import WhatsApp from "@/components/WhatsApp";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,7 +28,23 @@ export default function RootLayout({
           <div>{children}</div>
           <Footer />
         </div>
+        <WhatsApp />
         <Toaster />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+                (function(){
+                  var pp=document.createElement('script'),
+                  ppr=document.getElementsByTagName('script')[0];
+                  stid='bkwyMElXUjNYYzlqWUljVjdXbWsyQT09';
+                  pp.type='text/javascript';
+                  pp.async=true;
+                  pp.src=('https:' == document.location.protocol ? 'https://' : 'http://') + 's01.live2support.com/dashboardv2/chatwindow/';
+                  ppr.parentNode.insertBefore(pp, ppr);
+                })();
+              `,
+          }}
+        />
       </body>
     </html>
   );
