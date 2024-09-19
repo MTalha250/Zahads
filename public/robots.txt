@@ -1,0 +1,9 @@
+# Block all crawlers from accessing the /accounts section
+User-agent: *
+Disallow: /accounts
+
+# Allow all crawlers to access the rest of the site
+Allow: /
+
+# Specify the location of the XML sitemap
+Sitemap: https://zahads.com/sitemap.xml
