@@ -7,7 +7,7 @@ const HeroSection: React.FC = () => {
     <div className="relative w-full h-screen">
       <video
         className="absolute top-0 left-0 w-full h-full object-cover"
-        src="/videos/your-video.mp4"
+        src="https://videocdn.cdnpk.net/videos/35c44f81-7f3c-55d0-bbf0-257abb569ba6/horizontal/previews/clear/large.mp4?token=exp=1726770649~hmac=0ac06d8895d874b51ce3698976c606f3fb7eac2ef2eea61c53ca2b1f71e22873"
         autoPlay
         loop
         muted
