@@ -1,7 +1,7 @@
 import React from "react";
 // import Hero from "@/components/Home/Hero";
 // import Services from "@/components/Home/Services";
-// import BusinessSetup from "@/components/Home/BusinessSetup";
+import BusinessSetup from "@/components/Home/BusinessSetup";
 // import BusinessSetup2 from "@/components/Home/BusinessSetup2";
 // import Partners from "@/components/Home/Partners";
 // import Zones from "@/components/Home/Zones";
@@ -27,6 +27,7 @@ const page = () => {
       <Services />
       <Introduction />
       <Choose />
+      <BusinessSetup />
       <Marquee />
       <Faqs />
       <Contact />

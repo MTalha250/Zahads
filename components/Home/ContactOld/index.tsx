@@ -116,7 +116,7 @@ const Contact = () => {
               name="fname"
               value={data.fname}
               onChange={handleChange}
-              className="w-full mt-1 border-gray-300 rounded-md"
+              className="w-full mt-1 border-gray-300 rounded-md bg-neutral-200"
             />
           </div>
 
@@ -131,7 +131,7 @@ const Contact = () => {
               name="lname"
               value={data.lname}
               onChange={handleChange}
-              className="w-full mt-1 border-gray-300 rounded-md"
+              className="w-full mt-1 border-gray-300 rounded-md bg-neutral-200"
             />
           </div>
 
@@ -146,7 +146,7 @@ const Contact = () => {
               name="email"
               value={data.email}
               onChange={handleChange}
-              className="w-full mt-1 border-gray-300 rounded-md"
+              className="w-full mt-1 border-gray-300 rounded-md bg-neutral-200"
             />
           </div>
 
@@ -160,7 +160,7 @@ const Contact = () => {
               name="message"
               value={data.message}
               onChange={handleChange}
-              className="w-full mt-1 border-gray-300 rounded-md"
+              className="w-full mt-1 border-gray-300 rounded-md bg-neutral-200"
             />
           </div>
 

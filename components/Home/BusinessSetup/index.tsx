@@ -1,82 +1,235 @@
-"use client"
 import React from "react";
-import { PopupButton } from "@typeform/embed-react";
-import { RocketIcon } from "lucide-react";
-import setupThinking from '@/assets/setupThinking.webp'
+import { FaBuilding, FaIdBadge, FaHandshake } from "react-icons/fa";
 
-const BusinessSetup = () => {
-  const data = [
-    {
-      title: "There is a multitude of options.",
-      subtitle:
-        "With over 60 jurisdictions, how do you know which is the right one for your Dubai company? How do you make sure you’re choosing the right licence and business activity? Don’t let your business setup in Dubai be a trial-and-error process.",
-    },
-    {
-      title: "It is not easy.",
-      subtitle:
-        "Liaising with the relevant authorities and government departments alone takes time and travel miles.  Lots of both.",
-    },
-    {
-      title: "There is a mountain of paperwork.",
-      subtitle:
-        "Starting a Dubai company involves tonnes of paperwork. Think forms, applications, banking and legal requirements – and that is just the start.  ",
-    },
-    {
-      title: "You might save money - but at what cost?",
-      subtitle:
-        "What is your time worth?  Are you outstanding with detail?  Can you afford to hit pause on your business plans to fill out forms or attend more meetings?",
-    },
-  ];
-
+const BusinessSetupSection: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white md:p-16 px-8 py-5 items-center flex flex-col md:px-32">
-      <div className="flex items-center justify-center w-16 h-14 bg-primary/10 rounded-md">
-        <RocketIcon size={30} strokeWidth={1.5} className="text-primary" />
-      </div>
-      <h2 className="md:text-3xl text-xl font-bold text-center max-w-[700px] mt-5">
-        Should you undertake business setup in Dubai yourself?
-      </h2>
-      <p className="md:text-xl  max-w-[780px] text-center font-light mt-3">
-        Wondering if you can start a Dubai company yourself? You can. But there
-        are some things you need to know.
-      </p>
-      <div className="grid md:mt-20 mt-10 md:grid-cols-2 grid-cols-1 items-center gap-20">
-        <div className="flex flex-col items-center justify-center w-full h-full relative">
-          {data.map((item, index) => (
-            <div
-              key={item.title}
-              className="md:p-5 py-5 bg-white transition-all duration-200"
-            >
-              <h2 className="text-2xl font-bold">
-                {index + 1}. {item.title}
-              </h2>
-              <p className="text-gray-600  mt-3">{item.subtitle}</p>
+    <div className="pt-20">
+      <section className="flex flex-col md:flex-row items-center">
+        <div className="md:w-1/2 mb-8 lg:mb-0 px-8 md:px-16">
+          <h2 className="text-4xl text-gray-800 mb-4 pl-2 border-l-4 border-primary">
+            Need help setting up your business?
+          </h2>
+          <p className="text-lg text-gray-600 mb-8">
+            Starting a business in the UAE can be a complex process, but our
+            team of experts is here to make it easy. Zahads offers comprehensive
+            solutions for setting up your business in free zones or the
+            mainland, ensuring that you are fully compliant with local
+            regulations.
+          </p>
+          <div className="space-y-6">
+            <div className="flex items-start">
+              <div className="w-8 h-8 rounded-full flex items-center justify-center mr-4">
+                {/* Icon 1 */}
+                <FaBuilding className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-gray-800">
+                  Company Formation and Licensing
+                </h4>
+                <p className="text-gray-600">
+                  Fast and reliable company setup services across various free
+                  zones and mainland regions.
+                </p>
+              </div>
             </div>
-          ))}
+
+            <div className="flex items-start">
+              <div className="w-8 h-8 rounded-full flex items-center justify-center mr-4">
+                {/* Icon 2 */}
+                <FaIdBadge className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-gray-800">
+                  UAE Residence Visa
+                </h4>
+                <p className="text-gray-600">
+                  Assistance in obtaining residency visas for business owners,
+                  employees, and their families.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start">
+              <div className="w-8 h-8 rounded-full flex items-center justify-center mr-4">
+                {/* Icon 3 */}
+                <FaHandshake className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-gray-800">
+                  Business Sponsorship
+                </h4>
+                <p className="text-gray-600">
+                  Help in finding a reliable UAE national sponsor for your
+                  business needs.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <button className="mt-8 bg-primary text-white px-6 py-3 hover:bg-opacity-90 transition">
+            Enquire Now
+          </button>
         </div>
-        <img
-          src={setupThinking.src}
-          width={500}
-          height={300}
-          alt="img"
-        />
-      </div>
-      <div className="mt-10 flex flex-col justify-center items-center">
-        <h2 className="text-3xl font-bold text-center mt-5">
-          But it doesn't have to be this way.
-        </h2>
-        <p className="text-center font-light mt-3">
-          Before you do anything, talk to one of our experts at company
-          formation in Dubai. We'll show you how easy the Zahads process is
-          and why we're the partner of choice for more entrepreneurs choosing to
-          start a Dubai company.
-        </p>
-        <PopupButton id="ghl54Uga" className="text-white bg-secondary py-3 mt-5  px-4 rounded text-sm">
-          Cost Calculator
-        </PopupButton>
-      </div>
+
+        <div className="md:w-1/2">
+          <img
+            src="https://placehold.co/800x800"
+            alt="Business Setup Assistance"
+            className="w-full h-auto object-cover"
+          />
+        </div>
+      </section>
+      <section className="flex flex-col md:flex-row items-center">
+        <div className="md:w-1/2">
+          <img
+            src="https://placehold.co/800x800"
+            alt="Business Setup Assistance"
+            className="w-full h-auto object-cover"
+          />
+        </div>
+        <div className="md:w-1/2 mb-8 lg:mb-0 px-8 md:px-16">
+          <h2 className="text-4xl text-gray-800 mb-4 pl-2 border-l-4 border-primary">
+            Need help setting up your business?
+          </h2>
+          <p className="text-lg text-gray-600 mb-8">
+            Starting a business in the UAE can be a complex process, but our
+            team of experts is here to make it easy. Zahads offers comprehensive
+            solutions for setting up your business in free zones or the
+            mainland, ensuring that you are fully compliant with local
+            regulations.
+          </p>
+          <div className="space-y-6">
+            <div className="flex items-start">
+              <div className="w-8 h-8 rounded-full flex items-center justify-center mr-4">
+                {/* Icon 1 */}
+                <FaBuilding className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-gray-800">
+                  Company Formation and Licensing
+                </h4>
+                <p className="text-gray-600">
+                  Fast and reliable company setup services across various free
+                  zones and mainland regions.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start">
+              <div className="w-8 h-8 rounded-full flex items-center justify-center mr-4">
+                {/* Icon 2 */}
+                <FaIdBadge className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-gray-800">
+                  UAE Residence Visa
+                </h4>
+                <p className="text-gray-600">
+                  Assistance in obtaining residency visas for business owners,
+                  employees, and their families.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start">
+              <div className="w-8 h-8 rounded-full flex items-center justify-center mr-4">
+                {/* Icon 3 */}
+                <FaHandshake className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-gray-800">
+                  Business Sponsorship
+                </h4>
+                <p className="text-gray-600">
+                  Help in finding a reliable UAE national sponsor for your
+                  business needs.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <button className="mt-8 bg-primary text-white px-6 py-3 hover:bg-opacity-90 transition">
+            Enquire Now
+          </button>
+        </div>
+      </section>
+      <section className="flex flex-col md:flex-row items-center">
+        <div className="md:w-1/2 mb-8 lg:mb-0 px-8 md:px-16">
+          <h2 className="text-4xl text-gray-800 mb-4 pl-2 border-l-4 border-primary">
+            Need help setting up your business?
+          </h2>
+          <p className="text-lg text-gray-600 mb-8">
+            Starting a business in the UAE can be a complex process, but our
+            team of experts is here to make it easy. Zahads offers comprehensive
+            solutions for setting up your business in free zones or the
+            mainland, ensuring that you are fully compliant with local
+            regulations.
+          </p>
+          <div className="space-y-6">
+            <div className="flex items-start">
+              <div className="w-8 h-8 rounded-full flex items-center justify-center mr-4">
+                {/* Icon 1 */}
+                <FaBuilding className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-gray-800">
+                  Company Formation and Licensing
+                </h4>
+                <p className="text-gray-600">
+                  Fast and reliable company setup services across various free
+                  zones and mainland regions.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start">
+              <div className="w-8 h-8 rounded-full flex items-center justify-center mr-4">
+                {/* Icon 2 */}
+                <FaIdBadge className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-gray-800">
+                  UAE Residence Visa
+                </h4>
+                <p className="text-gray-600">
+                  Assistance in obtaining residency visas for business owners,
+                  employees, and their families.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start">
+              <div className="w-8 h-8 rounded-full flex items-center justify-center mr-4">
+                {/* Icon 3 */}
+                <FaHandshake className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-gray-800">
+                  Business Sponsorship
+                </h4>
+                <p className="text-gray-600">
+                  Help in finding a reliable UAE national sponsor for your
+                  business needs.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <button className="mt-8 bg-primary text-white px-6 py-3 hover:bg-opacity-90 transition">
+            Enquire Now
+          </button>
+        </div>
+
+        <div className="md:w-1/2">
+          <img
+            src="https://placehold.co/800x800"
+            alt="Business Setup Assistance"
+            className="w-full h-auto object-cover"
+          />
+        </div>
+      </section>
     </div>
   );
 };
 
-export default BusinessSetup;
+export default BusinessSetupSection;

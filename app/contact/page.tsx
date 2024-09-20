@@ -1,76 +1,79 @@
-"use client"
-import ServiceHero from "@/components/Services/ServiceHero";
-import React, { useState } from "react";
-import contactHero from "@/assets/contactHero.webp";
-import { PhoneIcon } from "lucide-react";
-import { BsWhatsapp } from "react-icons/bs";
-import { useFormik } from 'formik';
-import toast from 'react-hot-toast'
-import axios from "axios";
-import Loader from "@/components/Loader/Loader";
+"use client";
+import React from "react";
+// import { PhoneIcon } from "lucide-react";
+// import { BsWhatsapp } from "react-icons/bs";
+// import { useFormik } from "formik";
+// import toast from "react-hot-toast";
+// import axios from "axios";
+// import Loader from "@/components/Loader/Loader";
+import Hero from "@/components/contact/hero";
+import Contact from "@/components/Home/ContactOld";
 
 const page = () => {
+  // const [loading, setLoading] = useState(false);
 
-  const [loading, setLoading] = useState(false);
-
-  const formik = useFormik({
-    initialValues: {
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      nationality: '',
-      category: '',
-      message: ''
-    },
-    onSubmit: async (values) => {
-      try {
-        setLoading(true);
-        const res = await axios.post('/api/contact', values);
-        toast.success('Success! You will be contacted soon')
-      } catch (error: any) {
-        console.log(error);
-        toast.error('Error! Please try again later');
-      } finally {
-        setLoading(false);
-      }
-    },
-  });
+  // const formik = useFormik({
+  //   initialValues: {
+  //     firstName: "",
+  //     lastName: "",
+  //     email: "",
+  //     phone: "",
+  //     nationality: "",
+  //     category: "",
+  //     message: "",
+  //   },
+  //   onSubmit: async (values) => {
+  //     try {
+  //       setLoading(true);
+  //       const res = await axios.post("/api/contact", values);
+  //       toast.success("Success! You will be contacted soon");
+  //     } catch (error: any) {
+  //       console.log(error);
+  //       toast.error("Error! Please try again later");
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   },
+  // });
 
   return (
     <div>
-      <ServiceHero
-        backgroundColor="#102448"
-        description="Book a free consultation with one of our specialists now and get all the information you need about our comprehensive services. Our experienced team is here to guide you through every step, ensuring your needs are met with precision and expertise."
-        image={contactHero}
-        subtitle="Contact Us"
-        title="DO YOU NEED EXPERT BUSINESS SUPPORT IN THE UAE?"
-      />
-      <div className="md:px-40 px-8 my-5 w-full flex md:flex-row flex-col gap-20">
+      <Hero />
+      <Contact />
+      {/* <div className="md:px-40 px-8 my-5 w-full flex md:flex-row flex-col gap-20">
         <div className="md:w-1/2 w-full flex flex-col py-5">
           <div className="flex md:flex-row flex-col gap-5 ">
-            <a href="tel:+971567517147" className="flex w-full flex-row gap-5 px-8 py-3 md:w-fit rounded-xl items-center bg-primary/5 text-primary">
+            <a
+              href="tel:+971567517147"
+              className="flex w-full flex-row gap-5 px-8 py-3 md:w-fit rounded-xl items-center bg-primary/5 text-primary"
+            >
               <PhoneIcon size={24} className="" />
               <div className="flex flex-col">
                 <p className="text-black font-semibold ">Call us at</p>
                 <p className="">+971 56 7517147</p>
               </div>
             </a>
-            <a href="https://wa.me/971567517147" className="flex flex-row gap-5 px-8 py-3 md:w-fit w-full rounded-xl items-center bg-primary/5 text-primary">
+            <a
+              href="https://wa.me/971567517147"
+              className="flex flex-row gap-5 px-8 py-3 md:w-fit w-full rounded-xl items-center bg-primary/5 text-primary"
+            >
               <BsWhatsapp size={24} className="" />
               <div className="flex flex-col">
                 <p className="text-black font-semibold">Whatsapp us at</p>
                 <p className="">+971 56 7517147</p>
               </div>
-            </a >
+            </a>
           </div>
-          <h3 className="md:text-2xl text-lg mt-7 font-semibold ">Send us a message</h3>
+          <h3 className="md:text-2xl text-lg mt-7 font-semibold ">
+            Send us a message
+          </h3>
           <form
             className="mt-5 space-y-4"
             onSubmit={(e) => {
               e.preventDefault();
-              formik.handleSubmit()
-            }}>
+              formik.handleSubmit();
+            }}
+          >
             <div className="grid md:grid-cols-2 grid-cols-1 gap-5">
               <div>
                 <label htmlFor="firstName" className="font-semibold">
@@ -151,7 +154,12 @@ const page = () => {
                     (Required)
                   </span>
                 </label>
-                <select name="nationality" className="py-3 mt-1 border rounded px-2" value={formik.values.nationality} onChange={formik.handleChange}>
+                <select
+                  name="nationality"
+                  className="py-3 mt-1 border rounded px-2"
+                  value={formik.values.nationality}
+                  onChange={formik.handleChange}
+                >
                   <option>Albanian</option>
                   <option>Algerian</option>
                   <option>American</option>
@@ -172,7 +180,12 @@ const page = () => {
                     (Required)
                   </span>
                 </label>
-                <select name="category" value={formik.values.category} onChange={formik.handleChange} className="py-3 mt-1 border rounded px-2">
+                <select
+                  name="category"
+                  value={formik.values.category}
+                  onChange={formik.handleChange}
+                  className="py-3 mt-1 border rounded px-2"
+                >
                   <option>Business setup</option>
                   <option>Corporate services</option>
                   <option>General enquiry</option>
@@ -200,11 +213,11 @@ const page = () => {
             <button
               type="submit"
               disabled={loading}
-              className={`px-12 py-3 rounded-md text-white font-medium w-fit ${loading ? "bg-primary/50" : "bg-primary"}`}
+              className={`px-12 py-3 rounded-md text-white font-medium w-fit ${
+                loading ? "bg-primary/50" : "bg-primary"
+              }`}
             >
-              {
-                loading ? <Loader size={25} color="white" /> : "Submit"
-              }
+              {loading ? <Loader size={25} color="white" /> : "Submit"}
             </button>
           </form>
         </div>
@@ -213,10 +226,9 @@ const page = () => {
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462560.68281887844!2d54.89782418606137!3d25.076280448702796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2s!4v1720435011441!5m2!1sen!2s"
             loading="lazy"
             className="w-full h-[450px]"
-          >
-          </iframe>
+          ></iframe>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
