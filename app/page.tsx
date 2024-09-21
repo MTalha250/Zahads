@@ -18,6 +18,7 @@ import Faqs from "@/components/Home/FAQsOld";
 import About from "@/components/Home/AboutOld";
 import Services from "@/components/Home/ServicesOld";
 import Choose from "@/components/Home/ChooseOld";
+import Slogan from "@/components/slogan";
 
 const page = () => {
   return (
@@ -31,6 +32,7 @@ const page = () => {
       <Marquee />
       <Faqs />
       <Contact />
+      <Slogan />
 
       {/* <Hero />
       <Services />

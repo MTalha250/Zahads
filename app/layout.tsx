@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import ReactGA from "react-ga4";
 import Script from "next/script";
 import WhatsApp from "@/components/Whatsapp/Whatsapp";
-import { Toaster } from 'react-hot-toast'
+import { Toaster } from "react-hot-toast";
 import InfoHeader from "@/components/Home/HeroOld/InfoHeader";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -78,7 +78,7 @@ export default function RootLayout({
       <Script type="application/ld+json">{JSON.stringify(schemaMarkup)}</Script>
       <body className={inter.className}>
         <div className="fixed top-0 left-0 w-full z-50">
-          <InfoHeader />
+          {/* <InfoHeader /> */}
           <Navbar />
         </div>
         {children}
@@ -100,7 +100,7 @@ export default function RootLayout({
             `,
           }}
           crossOrigin="anonymous"
-        // strategy="lazyOnload"
+          // strategy="lazyOnload"
         />
       </body>
     </html>
