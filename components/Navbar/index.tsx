@@ -260,7 +260,7 @@ const Navbar = () => {
       <div className="hidden md:flex flex-col items-end">
         <ul className="items-center space-x-2 text-sm flex my-3">
           <li
-            className={`border-b hover:border-primary transition duration-300 py-2 ${
+            className={`border-b hover:border-primary hover:bg-secondary transition duration-300 py-2 ${
               pathName == "/" ? "border-primary" : "border-transparent"
             }`}
           >
@@ -269,7 +269,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li
-            className={`border-b hover:border-primary transition duration-300 py-2 ${
+            className={`border-b hover:border-primary hover:bg-secondary transition duration-300 py-2 ${
               pathName == "/media-centre"
                 ? "border-primary"
                 : "border-transparent"
@@ -280,7 +280,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li
-            className={`border-b hover:border-primary transition duration-300 py-2 ${
+            className={`border-b hover:border-primary hover:bg-secondary transition duration-300 py-2 ${
               pathName == "/about" ? "border-primary" : "border-transparent"
             }`}
           >
@@ -289,7 +289,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li
-            className={`border-b hover:border-primary transition duration-300 py-2 ${
+            className={`border-b hover:border-primary hover:bg-secondary transition duration-300 py-2 ${
               pathName == "/contact" ? "border-primary" : "border-transparent"
             }`}
           >
@@ -298,7 +298,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li
-            className={`border-b hover:border-primary transition duration-300 py-2 ${
+            className={`border-b hover:border-primary hover:bg-secondary transition duration-300 py-2 ${
               pathName == "/blogs" ? "border-primary" : "border-transparent"
             }`}
           >

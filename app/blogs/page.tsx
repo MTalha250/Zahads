@@ -21,7 +21,8 @@ const BlogList: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (
-        window.innerHeight + window.scrollY >= document.body.offsetHeight - 600 &&
+        window.innerHeight + window.scrollY >=
+          document.body.offsetHeight - 600 &&
         !loading &&
         visibleBlogs < reversedBlogs.length
       ) {
@@ -42,22 +43,22 @@ const BlogList: React.FC = () => {
   return (
     <>
       <div className="md:px-[60px] pt-[150px] pb-6 max-sm:px-1 flex justify-center flex-col">
-        <h1 className="text-center font-bold text-[2rem] py-4">Blogs</h1>
+        <h1 className="text-center text-[2rem] py-4">Blogs</h1>
         <div className="flex justify-center flex-grow-0 gap-6 flex-wrap">
           {reversedBlogs.slice(0, visibleBlogs).map((blog: Blog) => (
             <div
               key={blog.id}
-              className="rounded-lg md:w-[330px] max-sm:w-[280px] shadow-lg hover:shadow-2xl transition-all mb-4"
+              className="md:w-[330px] max-sm:w-[280px] shadow-lg hover:shadow-2xl transition-all mb-4"
             >
               <Link href={`/blogs/${blog.slug}`}>
                 <img
                   src={blog.image}
-                  className="rounded-t-lg h-[200px] w-[400px] object-fit"
+                  className="h-[200px] w-[400px] object-fit"
                   alt={blog.title}
                 />
                 <div className="p-3 pt-3">
-                  <h2 className="font-semibold text-[1.4rem]">{blog.title}</h2>
-                  <p className="text-[.85rem]">{blog.description}</p>
+                  <h2 className="text-[1.2rem]">{blog.title}</h2>
+                  <p className="text-[.85rem] mt-5">{blog.description}</p>
                 </div>
               </Link>
             </div>
@@ -87,7 +88,7 @@ const BlogList: React.FC = () => {
           width: 4px;
           height: 70%;
           margin: 0 2px;
-          background: #B2923C;
+          background: #b2923c;
           border-radius: 100px;
           animation: pulse 1.2s infinite ease-in-out;
         }
@@ -98,7 +99,7 @@ const BlogList: React.FC = () => {
           animation-delay: -1.1s;
         }
         .bar:nth-child(3) {
-          animation-delay: -1.0s;
+          animation-delay: -1s;
         }
         .bar:nth-child(4) {
           animation-delay: -0.9s;
@@ -107,7 +108,9 @@ const BlogList: React.FC = () => {
           animation-delay: -0.8s;
         }
         @keyframes pulse {
-          0%, 40%, 100% {
+          0%,
+          40%,
+          100% {
             transform: scaleY(1);
           }
           20% {

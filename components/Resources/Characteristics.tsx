@@ -1,34 +1,47 @@
-import { GlobeIcon } from 'lucide-react'
-import Image from 'next/image';
-import React from 'react'
+import React from "react";
+import img1 from "@/assets/about/1.jpg";
+import img2 from "@/assets/about/2.jpg";
+import img3 from "@/assets/about/3.jpg";
+import img4 from "@/assets/about/4.jpg";
+import img5 from "@/assets/about/5.jpg";
+import img6 from "@/assets/about/6.jpg";
+import img7 from "@/assets/about/7.jpg";
 
-const Characteristics = ({ title, points, image }: { title: string; points: any[]; image?: string }) => {
-    return (
-        <div className='bg-primary/5 pb-16'>
+const Characteristics = () => {
+  return (
+    <div className="px-8 md:px-16 py-20 min-h-[70vh] flex items-center justify-center relative">
+      <h1 className="max-w-sm text-4xl text-center">
+        Setting Up a Company With No Regrets
+      </h1>
+      <img src={img1.src} alt="about" className="absolute top-0 left-32 w-64" />
+      <img
+        src={img2.src}
+        alt="about"
+        className="absolute top-14 right-80 w-64"
+      />
+      <img src={img3.src} alt="about" className="absolute top-0 right-0 w-64" />
+      <img
+        src={img4.src}
+        alt="about"
+        className="absolute top-1/2 -translate-y-1/2 left-0 w-64"
+      />
+      <img
+        src={img5.src}
+        alt="about"
+        className="absolute bottom-5 left-32 w-64"
+      />
+      <img
+        src={img6.src}
+        alt="about"
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-64"
+      />
+      <img
+        src={img7.src}
+        alt="about"
+        className="absolute bottom-20 right-20 w-64"
+      />
+    </div>
+  );
+};
 
-            <div className='flex flex-col items-center pt-10 justify-center'>
-                <div className="flex items-center justify-center w-16 h-14 bg-primary/10 rounded-xl">
-                    <GlobeIcon size={35} className='text-primary' />
-                </div>
-                <h2 className="md:text-3xl text-xl font-semibold text-center max-w-[700px] mt-5">
-                    {title}
-                </h2>
-            </div>
-
-            <div className='grid md:grid-cols-2 grid-cols-1 gap-x-20 gap-y-5 md:w-7/12 w-full md:px-0 px-8 mx-auto md:my-20 my-5 mb-10'>
-                {
-                    points.map((point, index) =>
-                        <div key={index + 1} className='flex flex-col gap-2 items-start mt-5'>
-                            <p className='font-semibold text-xl'>{index + 1}. {point.title}</p>
-                            <p>{point.description}</p>
-                        </div>
-                    )
-                }
-            </div>
-            {image && <Image src={image} alt='image' width={500} height={500} className='rounded-xl md:w-1/2 w-full mx-auto' />}
-            
-        </div>
-    )
-}
-
-export default Characteristics
+export default Characteristics;
